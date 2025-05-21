@@ -15,3 +15,7 @@ This project allows users to paste a YouTube playlist link, watch videos without
   - [Gemini API](https://ai.google.dev/) (for advanced AI-based text processing)
 
 ![ytfocusmode2](https://github.com/user-attachments/assets/1f99b0dd-236d-4963-a975-1544f13e24ce)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
