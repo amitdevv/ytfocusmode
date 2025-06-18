@@ -1,0 +1,152 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+out/
+
+# Logs
+logs/
+*.log
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# API Keys and secrets (extra protection)
+*.key
+secrets.json
+config.json
+.secrets
+
+# Cache directories
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+
+# Temporary folders
+tmp/
+temp/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Local development
+*.local
+.eslintcache
+
+# Package managers (backup files only)
+package-lock.json.backup
+yarn.lock.backup
+
+# Don't ignore the main lock files - they should be committed
+# package-lock.json  <- Keep this committed!
+# yarn.lock          <- Keep this committed!
+# pnpm-lock.yaml     <- Keep this committed!
+
+# Firebase
+.firebase/
+.firebaserc
+firebase-debug.log
+
+# Vercel
+.vercel
+
+# Netlify
+.netlify/
+
+# Misc
+.tgz
+.tar.gz
+
+# Additional development files
+*.map.js
+*.map.css
+.env.example
+.env.sample
+
+# Testing
+coverage/
+.nyc_output/
+junit.xml
+test-results/
+
+# Storybook
+storybook-static/
+
+# TypeScript
+*.tsbuildinfo
+
+# Rollup
+.rollup.cache/
+
+# Documentation generation
+docs/build/
+docs/.docusaurus/
+
+# Mobile development (if added later)
+*.apk
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Backup files
+*~
+*.bak
+*.swp
+*.swo
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs (additional)
+error.log
+access.log
+combined.log
+
