@@ -1,35 +1,35 @@
-# 🎯 YouTube Focus Learner
+# YouTube Focus Learner
 
 A modern, AI-powered YouTube playlist learning tool that helps you stay focused while studying from video content. Built with React, TypeScript, and powered by Google's Gemini AI for intelligent note generation.
 
-## ✨ Features
+## Features
 
-### 🎥 **Smart Video Management**
+### **Smart Video Management**
 - **Playlist Loading**: Simply paste any YouTube playlist URL to get started
 - **Progress Tracking**: Visual progress bar showing completion status
 - **Sequential Learning**: Automatically advance through videos
 - **Video Controls**: Skip, mark complete, adjust playback speed
 - **Fullscreen Support**: Distraction-free viewing experience
 
-### 🤖 **AI-Powered Study Notes**
+### **AI-Powered Study Notes**
 - **Gemini Integration**: Generate intelligent study notes using Google's free Gemini API
 - **First Principles Analysis**: Extract core concepts and fundamental ideas
 - **Formula Detection**: Automatically identify and explain important formulas
 - **Structured Output**: Well-organized notes with clear headings and bullet points
 - **Copy & Export**: Easily copy notes for external use
 
-### 🎨 **Modern UI/UX**
+### **Modern UI/UX**
 - **Dark Theme**: Easy on the eyes for long study sessions
 - **Responsive Design**: Works seamlessly on desktop, tablet, and mobile
 - **Intuitive Navigation**: Clean, modern interface with smooth animations
 - **Visual Feedback**: Clear indicators for completed videos and current progress
 
-### 🔒 **Privacy & Security**
+### **Privacy & Security**
 - **Local Storage**: Your API keys stay on your device
 - **No Data Collection**: We don't store or track your personal information
 - **Self-Hosted**: Run entirely in your browser
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Node.js (v16 or higher)
@@ -54,10 +54,8 @@ A modern, AI-powered YouTube playlist learning tool that helps you stay focused 
    npm run dev
    ```
 
-4. **Open your browser**
-   Navigate to `http://localhost:5173`
 
-## 🔑 Setting Up Your API Key
+## Setting Up Your API Key
 
 To use the AI note generation feature, you'll need a free Gemini API key:
 
@@ -72,9 +70,9 @@ To use the AI note generation feature, you'll need a free Gemini API key:
 2. Paste your API key in the input field
 3. Click "Save"
 
-**🔒 Privacy Note**: Your API key is stored locally in your browser and never sent to our servers.
+**Privacy Note**: Your API key is stored locally in your browser and never sent to our servers.
 
-## 📖 How to Use
+## How to Use
 
 ### 1. **Load a Playlist**
 - Paste any YouTube playlist URL in the input field
@@ -84,10 +82,10 @@ To use the AI note generation feature, you'll need a free Gemini API key:
 ### 2. **Study with Focus**
 - Videos play automatically in sequence
 - Use the control buttons to:
-  - Mark videos as complete ✅
-  - Skip videos you don't need ⏭️
-  - Navigate between videos ⬅️➡️
-  - Adjust playback speed ⚙️
+  - Mark videos as complete
+  - Skip videos you don't need 
+  - Navigate between videos
+  - Adjust playback speed
 
 ### 3. **Generate Smart Notes**
 - Click "Generate Notes" below any video
@@ -102,7 +100,7 @@ To use the AI note generation feature, you'll need a free Gemini API key:
 - See which videos you've finished
 - Resume where you left off
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: React 18 + TypeScript
 - **Build Tool**: Vite
@@ -111,7 +109,7 @@ To use the AI note generation feature, you'll need a free Gemini API key:
 - **AI**: Google Gemini API
 - **Video**: React YouTube Player
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
@@ -130,7 +128,7 @@ src/
 └── App.tsx            # Main application component
 ```
 
-## 🎨 Customization
+## Customization
 
 ### Theme Colors
 The app uses a carefully crafted dark theme with green accents. You can customize colors in `tailwind.config.js`:
@@ -149,7 +147,7 @@ colors: {
 }
 ```
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Here's how you can help:
 
@@ -166,14 +164,14 @@ We welcome contributions! Here's how you can help:
 - Add proper error handling
 - Test your changes thoroughly
 
-## 📋 Available Scripts
+## Available Scripts
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
 
-## ❓ FAQ
+## FAQ
 
 ### **Q: Is this free to use?**
 A: Yes! Both the app and the Gemini API have generous free tiers.
@@ -190,7 +188,7 @@ A: Gemini's free tier includes 15 requests per minute and 1,500 requests per day
 ### **Q: Can I use this for any YouTube playlist?**
 A: Yes! It works with any public YouTube playlist or individual video.
 
-## 🐛 Known Issues
+## Known Issues
 
 - Some videos may not have transcripts available for note generation
 - Very long videos might hit API token limits
@@ -200,14 +198,14 @@ A: Yes! It works with any public YouTube playlist or individual video.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Google for the free Gemini API
 - YouTube for the video platform
 - The React and TypeScript communities
 - All contributors and users
 
-## 📞 Support
+## Support
 
 If you encounter any issues or have questions:
 
