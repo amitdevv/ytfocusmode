@@ -211,7 +211,7 @@ function App() {
           <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full backdrop-blur shadow-lg" style={{ backgroundColor: '#232323' }}>
             <span style={{ color: '#A3A3A3' }}>Made with ❤️ by Amit</span>
             <a
-              href="https://github.com/amitdevv"
+              href="https://github.com/amitdevv/ytfocusmode"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-8 h-8 rounded-full transition-colors"
