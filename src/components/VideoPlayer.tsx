@@ -186,11 +186,16 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
           </button>
 
           <button
-            onClick={onComplete}
+            onClick={() => {
+              onComplete();
+              if (hasNext) {
+                onNext();
+              }
+            }}
             className="flex items-center gap-2 px-6 py-3 text-white rounded-xl shadow-lg hover:shadow-xl transition-all"
-            style={{ backgroundColor: '#22C55E' }}
+            style={{ backgroundColor: '#1E874B' }}
             onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#16A34A'}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#22C55E'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#1E874B'}
           >
             <CheckCircle size={20} />
             Mark as Complete
@@ -199,9 +204,9 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
           <button
             onClick={onSkip}
             className="flex items-center gap-2 px-6 py-3 text-white rounded-xl shadow-lg hover:shadow-xl transition-all"
-            style={{ backgroundColor: '#F59E0B' }}
-            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#D97706'}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#F59E0B'}
+            style={{ backgroundColor: '#8a6424' }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#654f1f'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#8a6424'}
           >
             <XCircle size={20} />
             Skip Video
@@ -221,7 +226,14 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
         </div>
       </div>
 
-      {!isFullscreen && <VideoSummary videoId={video.id} />}
+      {!isFullscreen && (
+        <VideoSummary 
+          videoId={video.id} 
+          onComplete={onComplete}
+          onNext={onNext}
+          hasNext={hasNext}
+        />
+      )}
     </div>
   );
 };

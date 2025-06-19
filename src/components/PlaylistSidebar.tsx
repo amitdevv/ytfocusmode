@@ -15,7 +15,7 @@ export const PlaylistSidebar: React.FC<PlaylistSidebarProps> = ({
 }) => {
   return (
     <div className="w-full h-[600px] backdrop-blur rounded-xl shadow-lg overflow-hidden" style={{ backgroundColor: '#232323' }}>
-      <div className="p-4" style={{ backgroundColor: '#22C55E' }}>
+      <div className="p-4" style={{ backgroundColor: '#1E874B' }}>
         <h3 className="font-semibold text-white flex items-center gap-2">
           <PlayCircle size={20} />
           Playlist Videos

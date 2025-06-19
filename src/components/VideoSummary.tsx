@@ -2,19 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { BookOpen, Loader2, AlertCircle, Copy, Check, Settings } from 'lucide-react';
 import { generateVideoSummary } from '../utils/gemini';
 import { fetchVideoTranscript } from '../utils/youtube';
-import { ApiKeySettings } from './ApiKeySettings';
+import { setupApiKey, manageApiKey } from './SimpleApiKeyPopup';
 
 interface VideoSummaryProps {
   videoId: string;
+  onComplete?: () => void;
+  onNext?: () => void;
+  hasNext?: boolean;
 }
 
-export const VideoSummary: React.FC<VideoSummaryProps> = ({ videoId }) => {
+export const VideoSummary: React.FC<VideoSummaryProps> = ({ videoId, onComplete, onNext, hasNext }) => {
   const [summary, setSummary] = useState<string>('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string>('');
   const [videoInfo, setVideoInfo] = useState<string>('');
   const [copied, setCopied] = useState(false);
-  const [showApiSettings, setShowApiSettings] = useState(false);
   const [hasApiKey, setHasApiKey] = useState(false);
 
   useEffect(() => {
@@ -39,7 +41,7 @@ export const VideoSummary: React.FC<VideoSummaryProps> = ({ videoId }) => {
     // Check if user has an API key
     const apiKey = localStorage.getItem('gemini_api_key');
     setHasApiKey(!!apiKey);
-  }, [showApiSettings]);
+  }, []);
 
   const cleanText = (text: string) => {
     return text.replace(/[*_`~]/g, '').trim();
@@ -47,7 +49,7 @@ export const VideoSummary: React.FC<VideoSummaryProps> = ({ videoId }) => {
 
   const handleGenerateSummary = async () => {
     if (!hasApiKey) {
-      setShowApiSettings(true);
+      setupApiKey(setHasApiKey);
       return;
     }
 
@@ -100,12 +102,12 @@ export const VideoSummary: React.FC<VideoSummaryProps> = ({ videoId }) => {
     <div className="mt-6 p-6 backdrop-blur rounded-xl shadow-lg" style={{ backgroundColor: '#232323' }}>
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-semibold flex items-center gap-2" style={{ color: '#E5E5E5' }}>
-          <BookOpen className="w-5 h-5" style={{ color: '#22C55E' }} />
+          <BookOpen className="w-5 h-5" style={{ color: '#1E874B' }} />
           Smart Notes
         </h3>
         <div className="flex gap-2">
           <button
-            onClick={() => setShowApiSettings(true)}
+            onClick={() => manageApiKey(setHasApiKey)}
             className="flex items-center gap-2 px-3 py-2 text-white rounded-lg shadow-md hover:shadow-lg transition-all"
             style={{ backgroundColor: '#171717', border: '1px solid #2E2E2E' }}
             onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#2E2E2E'}
@@ -131,9 +133,9 @@ export const VideoSummary: React.FC<VideoSummaryProps> = ({ videoId }) => {
             onClick={handleGenerateSummary}
             disabled={loading || !videoInfo}
             className="flex items-center gap-2 px-4 py-2 text-white rounded-lg shadow-md hover:shadow-lg transition-all disabled:opacity-50 disabled:hover:shadow-md"
-            style={{ backgroundColor: hasApiKey ? '#22C55E' : '#F59E0B' }}
+            style={{ backgroundColor: hasApiKey ? '#1E874B' : '#F59E0B' }}
             onMouseEnter={(e) => !e.currentTarget.disabled && (e.currentTarget.style.backgroundColor = hasApiKey ? '#16A34A' : '#D97706')}
-            onMouseLeave={(e) => !e.currentTarget.disabled && (e.currentTarget.style.backgroundColor = hasApiKey ? '#22C55E' : '#F59E0B')}
+            onMouseLeave={(e) => !e.currentTarget.disabled && (e.currentTarget.style.backgroundColor = hasApiKey ? '#1E874B' : '#F59E0B')}
           >
             {loading ? (
               <>
@@ -163,6 +165,25 @@ export const VideoSummary: React.FC<VideoSummaryProps> = ({ videoId }) => {
               <p key={index} className="mb-2" style={{ color: '#E5E5E5' }}>{line}</p>
             ))}
           </div>
+          {onComplete && (
+            <div className="mt-4 flex justify-center">
+              <button
+                onClick={() => {
+                  onComplete();
+                  if (hasNext && onNext) {
+                    onNext();
+                  }
+                }}
+                className="flex items-center gap-2 px-6 py-3 text-white rounded-xl shadow-lg hover:shadow-xl transition-all"
+                style={{ backgroundColor: '#1E874B' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#16A34A'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#1E874B'}
+              >
+                <Check className="w-5 h-5" />
+                Mark as Complete & Continue
+              </button>
+            </div>
+          )}
         </div>
       )}
 
@@ -178,11 +199,11 @@ export const VideoSummary: React.FC<VideoSummaryProps> = ({ videoId }) => {
                 Set up your free Gemini API key to generate AI-powered study notes
               </p>
               <button
-                onClick={() => setShowApiSettings(true)}
+                onClick={() => setupApiKey(setHasApiKey)}
                 className="inline-flex items-center gap-2 px-4 py-2 text-white rounded-lg shadow-md hover:shadow-lg transition-all"
-                style={{ backgroundColor: '#22C55E' }}
+                style={{ backgroundColor: '#1E874B' }}
                 onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#16A34A'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#22C55E'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#1E874B'}
               >
                 <Settings className="w-4 h-4" />
                 Setup API Key
@@ -192,10 +213,7 @@ export const VideoSummary: React.FC<VideoSummaryProps> = ({ videoId }) => {
         </div>
       )}
 
-      <ApiKeySettings 
-        isOpen={showApiSettings} 
-        onClose={() => setShowApiSettings(false)} 
-      />
+
     </div>
   );
 };

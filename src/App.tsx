@@ -127,12 +127,12 @@ function App() {
   const currentVideo = playlistData.videos[playlistData.currentIndex];
 
   return (
-    <div className="min-h-screen transition-colors" style={{ backgroundColor: '#171717' }}>
-      <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen flex flex-col transition-colors" style={{ backgroundColor: '#171717' }}>
+      <div className="flex-1 max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 w-full">
         <div className="flex justify-between items-center mb-8 animate-slide-in">
           <div className="flex items-center gap-3">
             <Laptop2 className="w-8 h-8" style={{ color: '#22C55E' }} />
-            <h1 className="text-3xl font-bold" style={{ color: '#E5E5E5' }}>
+            <h1 className="text-3xl font-normal" style={{ color: '#E5E5E5' }}>
               YouTube Focus Learner
             </h1>
           </div>
@@ -203,11 +203,15 @@ function App() {
           </div>
         )}
 
-        <footer className="mt-12 py-6 text-center">
+      </div>
+      
+      {/* Fixed footer that always stays at bottom */}
+      <footer className="py-6 text-center border-t" style={{ borderColor: '#2E2E2E' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full backdrop-blur shadow-lg" style={{ backgroundColor: '#232323' }}>
             <span style={{ color: '#A3A3A3' }}>Made with ❤️ by Amit</span>
             <a
-              href="https://github.com/amitdevv/ytfocusmode"
+              href="https://github.com/amitdevv"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-8 h-8 rounded-full transition-colors"
@@ -218,8 +222,8 @@ function App() {
               <Github className="w-5 h-5" style={{ color: '#A3A3A3' }} />
             </a>
           </div>
-        </footer>
-      </div>
+        </div>
+      </footer>
     </div>
   );
 }

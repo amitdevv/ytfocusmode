@@ -34,7 +34,7 @@ export const PlaylistInput: React.FC<PlaylistInputProps> = ({ onSubmit, loading 
           }}
           onFocus={(e) => {
             e.currentTarget.style.borderColor = '#22C55E';
-            e.currentTarget.style.boxShadow = '0 0 0 3px rgba(34, 197, 94, 0.3)';
+            e.currentTarget.style.boxShadow = '0 0 0 1px rgba(34, 197, 94, 0.3)';
           }}
           onBlur={(e) => {
             e.currentTarget.style.borderColor = '#2E2E2E';
@@ -45,7 +45,7 @@ export const PlaylistInput: React.FC<PlaylistInputProps> = ({ onSubmit, loading 
           type="submit"
           disabled={loading}
           className="flex items-center gap-2 px-8 py-3 text-white font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:hover:shadow-lg"
-          style={{ backgroundColor: '#22C55E' }}
+          style={{ backgroundColor: '#1E874B' }}
           onMouseEnter={(e) => !loading && (e.currentTarget.style.backgroundColor = '#16A34A')}
           onMouseLeave={(e) => !loading && (e.currentTarget.style.backgroundColor = '#22C55E')}
         >
